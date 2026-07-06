@@ -14,9 +14,10 @@ using TUP = tuple<ll,ll,ll>;
 template<typename t,typename u>inline bool chmax(t&a,u b){return a<b?a=b,1:0;}
 template<typename t,typename u>inline bool chmin(t&a,u b){return a>b?a=b,1:0;}
 int yn(bool b){cout<<(b?"Yes\n":"No\n");return 0;}
-vector<int> di={1,0,-1,0},dj={0,1,0,-1};
+constexpr int di[]={1,0,-1,0};
+constexpr int dj[]={0,1,0,-1};
 using mint = modint998244353;
 ostream&operator<<(ostream&os,const mint& x){os<<x.val();return os;};
 template <typename t>ostream&operator<<(ostream&os,const vector<t>&x){for(const t&i:x)os<<i<<' ';return os;}
 template <typename t>ostream&operator<<(ostream&os,const vector<vector<t>>&x){for(const vector<t>&i:x)os<<i<<'\n';return os;}
-ll inf=2e18;
+constexpr ll inf=1LL<<60;
