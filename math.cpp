@@ -126,11 +126,19 @@ struct frac{
 };
 
 //nCr
-mint nCr(int n,int r){
-    mint a=1,b=1;
-    for(int i=n;i>n-r;i--)a*=i;
-    for(int i=r;i>0;i--)b*=i;
-    return a/b;
+mint comb(int n,int r){
+	if(n < 0 || r < 0 || n < r)
+		return 0;
+
+	static vector<mint> fact={1};
+	static vector<mint> invf={mint(1).inv()};
+
+	while(fact.size() <= n)
+	{
+		fact.push_back(fact.back() * fact.size());
+		invf.push_back(fact.back().inv());
+	}
+	return fact[n] * invf[r] * invf[n-r];
 }
 
 //複数modでの計算
