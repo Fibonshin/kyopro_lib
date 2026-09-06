@@ -105,7 +105,7 @@ pair<ll,ll> extgcd(ll a,ll b){
     return {y,x-q*y};
 }
 
-// 分数の比較
+// 分数の比較 a/b
 struct frac{
     ll a,b;
     frac(ll _a=0,ll _b=1): a(_a),b(_b){
@@ -122,6 +122,9 @@ struct frac{
     }
     bool operator==(const frac& x) const{
         return a*x.b == x.a*b;
+    }
+    bool operator!=(const frac& x) const{
+        return a*x.b != x.a*b;
     }
 };
 
@@ -168,4 +171,18 @@ ll isqrt(ll x){
         else wa = m;
     }
     return ac;
+}
+
+// a/b 床関数
+ll div_floor(ll a,ll b){
+	if(b<0)a=-a,b=-b;
+	if(a<0)return (a-b+1)/b;
+	return a/b;
+}
+
+// a/b 天井関数
+ll div_ceil(ll a,ll b){
+	if(b<0)a=-a,b=-b;
+	if(a<0)return a/b;
+	return (a+b-1)/b;
 }
