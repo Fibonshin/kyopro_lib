@@ -128,7 +128,7 @@ struct frac{
     }
 };
 
-//nCr
+//nCr 前計算O(n) クエリO(1) 何回も計算するときに。
 mint comb(int n,int r){
 	if(n < 0 || r < 0 || n < r)
 		return 0;
@@ -142,6 +142,18 @@ mint comb(int n,int r){
 		invf.push_back(fact.back().inv());
 	}
 	return fact[n] * invf[r] * invf[n-r];
+}
+
+//nCr O(r) Nがデカいときに。
+mint comb(ll n,int r){
+	if(n < 0 || r < 0 || n < r)
+		return 0;
+	mint res=1;
+	rep(i,r){
+		res*=n-i;
+		res/=r-i;
+	}
+	return res;
 }
 
 //複数modでの計算
