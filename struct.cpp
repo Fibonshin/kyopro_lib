@@ -141,7 +141,7 @@ struct Trie{
         dat[cur].cnt++;
     }
 
-    int serch(string s,bool prefix=false){
+    int search(string s,bool prefix=false){
         int cur=0;
         for(char c:s){
             bool ok=0;
