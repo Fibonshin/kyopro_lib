@@ -1,4 +1,4 @@
-#include "header.cpp"
+#include "../header.cpp"
  
 // 行列積
 template<typename T> vector<vector<T>> mat_mul(const vector<vector<T>>& a,const vector<vector<T>>& b){
