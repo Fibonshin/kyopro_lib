@@ -19,6 +19,13 @@ template<typename T>vector<vector<T>> rot(vector<vector<T>>&s,int deg=1){
 
 // 配列の余白をカット → https://atcoder.jp/contests/abc218/submissions/49616879
 
+// 二次配列flip(string対応)
+vector<string> flip(vector<string>&s){
+    int h=s.size(),w=s[0].size();
+    vector<string> res(w);
+    rep(i,h)rep(j,w)res[j]+=s[i][j];
+    return res;
+}
 
 // 床関数と天井関数
 ll floor(ll x,ll m){return (x-(x%m+m)%m)/m;}

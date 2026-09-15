@@ -37,6 +37,9 @@ vector<int> primes={
 1e16+61
 */
 
+#include <boost/multiprecision/cpp_int.hpp>
+using bint = boost::multiprecision::cpp_int;
+
 //素因数列挙 O(√N)
 vector<pair<ll,ll>> prime_factorization(ll x){
     vector<pair<ll,ll>> res;
