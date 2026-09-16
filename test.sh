@@ -1,16 +1,23 @@
+DIR=debug
 N="${3:-30}"
 
-mkdir -p test
-g++ "$1".cpp -o test/main
-g++ "$2".cpp -o test/naive
+if [[ -z "$1" || -z "$2" ]]; then
+    echo "Usage: $0 <main> <naive> [N]"
+    exit 1
+fi
+
+mkdir -p ${DIR}
+g++ "$1".cpp -o ${DIR}/main
+g++ "$2".cpp -o ${DIR}/naive
 
 ok=true
 
 for ((i=1; i<=N; i++)); do
-  python3 test/generate.py > test/in
-  ./test/main < test/in > test/out1.txt
-  ./test/naive < test/in > test/out2.txt
-  if ! diff test/out1.txt test/out2.txt; then
+  echo -ne "\rRunning test $i/$N..."
+  python3 ${DIR}/generate.py > ${DIR}/in
+  ./${DIR}/main < ${DIR}/in > ${DIR}/out1.txt
+  ./${DIR}/naive < ${DIR}/in > ${DIR}/out2.txt
+  if ! diff ${DIR}/out1.txt ${DIR}/out2.txt; then
     echo "found at test #$i"
 	ok=false
     break
@@ -21,4 +28,4 @@ if $ok; then
 	echo "All $N tests passed!"
 fi
 
-rm test/main test/naive
+rm ${DIR}/main ${DIR}/naive
