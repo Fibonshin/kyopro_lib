@@ -1,6 +1,6 @@
 #include "../header.cpp"
 
-// 更新ありでK番目に大きなor小さな要素を取得。
+// 更新ありでK番目(固定)に大きなor小さな要素を取得。
 // https://atcoder.jp/contests/abc475/submissions/79275764
 template<class t,class Compare,class RCompare>struct PriorityKthStructure{
     ll k;
