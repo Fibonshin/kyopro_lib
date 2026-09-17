@@ -6,13 +6,13 @@ def rd_string(n:int)->str:
     return ''.join(random.choices(string.ascii_lowercase,k=n))
 
 def rd_array(l:int, r:int, n:int)->list[int]:
-    return [random.randint(l, r) for _ in range(n)]
+    return [randint(l, r) for _ in range(n)]
 
 def rd_perm(n:int)->list[int]:
     return random.sample(range(1,n+1),n)
 
-def rd_bracket(n:int)->str:
-    return ''.join(random.choices('()', k=n))
+def rd_chars(n:int,chars:str='()')->str:
+    return ''.join(random.choices(chars, k=n))
 
 def rd_grid(h:int, w:int, chars:str='.#', weights:list[float]|None=None,) -> list[str]:
     return [''.join(random.choices(chars,weights=weights,k=w))for _ in range(h)]
@@ -54,3 +54,16 @@ def rd_connected_graph(n: int, m: int) -> list[tuple[int, int]]:
     random.shuffle(edges)
 
     return edges
+
+# nをk分割
+def rd_part(n: int, k: int) -> list[int]:
+    cuts = sorted(random.sample(range(n + k - 1), k - 1))
+
+    result = [cuts[0]]
+
+    for i in range(1, k - 1):
+        result.append(cuts[i] - cuts[i - 1] - 1)
+
+    result.append(n + k - 2 - cuts[-1])
+
+    return result
