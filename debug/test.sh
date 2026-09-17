@@ -2,8 +2,8 @@ DIR=debug
 N="${3:-30}"
 
 if [[ -z "$1" || -z "$2" ]]; then
-    echo "Usage: $0 <main> <naive> [N]"
-    exit 1
+	echo "Usage: $0 <main> <naive> [N]"
+	exit 1
 fi
 
 mkdir -p ${DIR}
@@ -13,15 +13,27 @@ g++ "$2".cpp -o ${DIR}/naive
 ok=true
 
 for ((i=1; i<=N; i++)); do
-  echo -ne "\rRunning test $i/$N..."
-  python3 ${DIR}/generate.py > ${DIR}/in
-  ./${DIR}/main < ${DIR}/in > ${DIR}/out1.txt
-  ./${DIR}/naive < ${DIR}/in > ${DIR}/out2.txt
-  if ! diff ${DIR}/out1.txt ${DIR}/out2.txt; then
-    echo "found at test #$i"
-	ok=false
-    break
-  fi
+	echo -ne "\rRunning test $i/$N..."
+	python3 ${DIR}/generate.py > ${DIR}/in
+	./${DIR}/main < ${DIR}/in > ${DIR}/wa.txt
+	./${DIR}/naive < ${DIR}/in > ${DIR}/ac.txt
+	if ! diff -q ${DIR}/wa.txt ${DIR}/ac.txt > /dev/null; then
+		echo
+		echo "Found at test #$i"
+		echo
+		echo "[Input]"
+		cat ${DIR}/in
+		echo
+		echo -e "\033[31m[WA]\033[0m"
+		cat ${DIR}/wa.txt
+		echo
+		echo -e "\033[32m[AC]\033[0m"
+		cat ${DIR}/ac.txt
+		echo
+
+		ok=false
+		break
+	fi
 done
 
 if $ok; then
