@@ -1,5 +1,5 @@
 DIR=debug
-N="${3:-30}"
+N="${3:-1000}"
 
 if [[ -z "$1" || -z "$2" ]]; then
 	echo "Usage: $0 <main> <naive> [N]"
@@ -14,7 +14,7 @@ ok=true
 
 for ((i=1; i<=N; i++)); do
 	echo -ne "\rRunning test $i/$N..."
-	python3 ${DIR}/generate.py > ${DIR}/in
+	pypy3 ${DIR}/generate.py > ${DIR}/in
 	./${DIR}/main < ${DIR}/in > ${DIR}/wa.txt
 	./${DIR}/naive < ${DIR}/in > ${DIR}/ac.txt
 	if ! diff -q ${DIR}/wa.txt ${DIR}/ac.txt > /dev/null; then

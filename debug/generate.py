@@ -3,14 +3,16 @@ from random_gen import(
         rd_array,
         rd_grid,
         place_sg,
-        rd_bracket,
+        rd_chars,
         rd_connected_graph,
         rd_perm,
+        rd_part,
         randint,
 )
 
-n=4
-g=rd_connected_graph(n,4)
-print(n)
-for u,v in g:
-    print(u,v)
+import random
+
+n,k=5,3
+print(n,k)
+for i in range(n):
+    print(rd_chars(randint(1,4),"ab"))

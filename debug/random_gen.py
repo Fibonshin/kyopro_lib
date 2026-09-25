@@ -11,7 +11,7 @@ def rd_array(l:int, r:int, n:int)->list[int]:
 def rd_perm(n:int)->list[int]:
     return random.sample(range(1,n+1),n)
 
-def rd_chars(n:int,chars:str='()')->str:
+def rd_chars(n:int,chars:str='ab')->str:
     return ''.join(random.choices(chars, k=n))
 
 def rd_grid(h:int, w:int, chars:str='.#', weights:list[float]|None=None,) -> list[str]:
