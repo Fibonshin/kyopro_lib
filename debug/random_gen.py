@@ -32,6 +32,13 @@ def place_sg(grid: list[str]) -> list[str]:
 
     return [''.join(row) for row in result]
 
+def rd_graph(n: int, m: int) -> list[tuple[int, int]]:
+    if m > n * (n - 1) // 2:
+        raise ValueError("m is too large")
+
+    edges = [(u, v) for u in range(1, n + 1) for v in range(u + 1, n + 1)]
+    return random.sample(edges, m)
+
 def rd_connected_graph(n: int, m: int) -> list[tuple[int, int]]:
     if m < n - 1:
         raise ValueError(f"connected graph requires m >= n - 1, but got n={n}, m={m}")
