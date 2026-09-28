@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // 配列の余白をカット
 vector<string> trim(vector<string>&x,char nop){

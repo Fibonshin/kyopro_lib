@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // RunLengthEncoding O(N)
 vector<pair<char,int>> RunLengthEncoding(string&x){

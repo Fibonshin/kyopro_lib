@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // Manacher's Algorithm
 vector<int> Manacher(string s){

@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // 二次配列flip
 template<typename T>vector<vector<T>> flip(vector<vector<T>>&s){

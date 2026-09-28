@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 //約数列挙 O(√N)
 vector<ll> enumdiv(ll n) { 

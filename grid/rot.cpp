@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // 二次配列回転
 // string ver → https://atcoder.jp/contests/abc218/submissions/49616879

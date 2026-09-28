@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // n以下のすべての非負整数の素因数列挙 O(NlogN)?
 // 0,1は空

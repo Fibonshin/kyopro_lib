@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 struct LCA{
 	vector<vector<int>> g;

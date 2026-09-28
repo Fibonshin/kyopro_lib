@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // https://atcoder.jp/contests/abc339/submissions/50038712
 struct SEG{

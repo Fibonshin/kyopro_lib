@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
  
 // N頂点M辺の最小全域木の重みの最小。uとvの無向辺で重みがc。非連結な時INF。
 ll mst(int n,int m,vector<int> u,vector<int> v,vector<int> c){

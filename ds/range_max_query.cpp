@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // Range Max Query
 struct RMQ{

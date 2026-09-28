@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // エラトステネスの篩 O(NloglogN)
 vector<int> eratosthenes(int x){

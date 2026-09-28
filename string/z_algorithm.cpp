@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // Z algorithm O(|S|)
 vector<int> z_algo(string&s){

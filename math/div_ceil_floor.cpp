@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // a/b 床関数
 ll div_floor(ll a,ll b){

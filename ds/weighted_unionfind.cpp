@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // ポテンシャルつきUnionFind
 // 座標平面ver → https://atcoder.jp/contests/adt_all_20240110_1/submissions/49196757

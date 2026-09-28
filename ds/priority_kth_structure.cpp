@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // 更新ありでK番目(固定)に大きなor小さな要素を取得。
 // https://atcoder.jp/contests/abc475/submissions/79275764

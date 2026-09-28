@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
  
 
 // PrioritySumStructure(更新ありの数列の大きい要素K個の総和を返す)

@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // gは木
 // https://atcoder.jp/contests/abc014/submissions/79330327

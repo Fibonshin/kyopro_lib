@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // https://hogloid.hatenablog.com/entry/2014/09/23/132440
 // https://atcoder.jp/contests/arc033/submissions/79284307

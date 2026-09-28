@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // RollingHash sの中にtが何回出現するかO(|S|)
 // https://yukicoder.me/submissions/941850 mod 2^64-1。速い。

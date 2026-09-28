@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // 分数の比較 a/b
 struct frac{

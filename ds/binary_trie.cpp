@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // binaryだけじゃなくて、boolをintにすれば整数列なんでも入れれるようにできるはず。
 // cnt_lowerで数列s以下の数列、cnt_greaterで数列s以上の数列の数が得られる。

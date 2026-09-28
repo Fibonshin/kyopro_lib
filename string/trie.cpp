@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // Trie木
 //使用例 https://atcoder.jp/contests/abc353/submissions/58002391

@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 //複数modでの計算
 const int p1=1000000349;

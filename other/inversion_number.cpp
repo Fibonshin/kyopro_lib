@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 // 要素が[0,mx]の数列の転倒数
 ll inversion_number(vector<int> x,int mx){

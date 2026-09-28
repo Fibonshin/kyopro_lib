@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 //素数判定 O(√N)
 bool is_prime(ll x){

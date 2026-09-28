@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 //遅延評価セグメント木 
 //seg(初期値の配列 , 求めるものがmaxなら 1 )

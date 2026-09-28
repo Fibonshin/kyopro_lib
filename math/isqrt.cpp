@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 //誤差なしsqrt
 ll isqrt(ll x){

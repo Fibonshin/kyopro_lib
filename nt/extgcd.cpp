@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 //拡張ユークリッド ax+by=gcd(a,b)の(x,y)
 // verify at https://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=8933684#1

@@ -1,4 +1,4 @@
-#include "../header.cpp"
+#include "header.hpp"
 
 //nCr 前計算O(n) クエリO(1) 何回も計算するときに。
 mint binom(int n,int r){
