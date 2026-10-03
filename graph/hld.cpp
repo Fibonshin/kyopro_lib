@@ -1,6 +1,7 @@
 #include "header.hpp"
 // https://atcoder.jp/contests/abc294/submissions/79684525
 // https://judge.yosupo.jp/submission/407612
+// https://yukicoder.me/submissions/1191338
 
 struct hld{
 	int n;
