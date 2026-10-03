@@ -1,8 +1,6 @@
 #include "header.hpp"
-// https://judge.yosupo.jp/submission/406748
-// https://judge.yosupo.jp/submission/406749
-// https://atcoder.jp/contests/abc014/submissions/79611366
-
+// https://atcoder.jp/contests/abc294/submissions/79684525
+// https://judge.yosupo.jp/submission/407612
 struct hld{
 	int n;
 	vector<int> vertex,id,head,par,dep;
@@ -68,5 +66,43 @@ struct hld{
 		if(steps < uc)return jump_up(u,steps);
 		else if(steps-uc<=vc)return jump_up(v,uc+vc-steps);
 		else return -1;
+	}
+	template<typename F,typename G>
+	void foreach(int u,int v,const F& f_uc,const G& f_vc){
+		stack<pair<int,int>> st;
+		while(head[u]!=head[v]){
+			if(id[u]>id[v]){
+				f_uc(id[head[u]],id[u]+1);
+				u=par[head[u]];
+			}else{
+				f_vc(id[head[v]],id[v]+1);
+				v=par[head[v]];
+			}
+		}
+		if(id[u]<id[v])f_vc(id[u],id[v]+1);
+		else f_uc(id[v],id[u]+1);
+	}
+	template<typename F,typename G>
+	void foreach_edge(int u,int v,const F& f_uc,const G& f_vc){
+		stack<pair<int,int>> st;
+		while(head[u]!=head[v]){
+			if(id[u]>id[v]){
+				f_uc(id[head[u]],id[u]+1);
+				u=par[head[u]];
+			}else{
+				f_vc(id[head[v]],id[v]+1);
+				v=par[head[v]];
+			}
+		}
+		if(id[u]<id[v])f_vc(id[u]+1,id[v]+1);
+		else f_uc(id[v]+1,id[u]+1);
+	}
+	template<typename F>
+	void foreach(int u,int v,const F& f){
+		foreach(u,v,f,f);
+	}
+	template<typename F>
+	void foreach_edge(int u,int v,const F& f){
+		foreach_edge(u,v,f,f);
 	}
 };
