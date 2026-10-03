@@ -1,6 +1,7 @@
 #include "header.hpp"
 // https://atcoder.jp/contests/abc294/submissions/79684525
 // https://judge.yosupo.jp/submission/407612
+
 struct hld{
 	int n;
 	vector<int> vertex,id,head,par,dep;
