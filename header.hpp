@@ -1,3 +1,4 @@
+// library: https://github.com/Fibonshin/kyopro_lib
 #if __has_include(<acl_bits.hpp>)
 #include <acl_bits.hpp>
 #else
