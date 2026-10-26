@@ -18,7 +18,7 @@ struct V{
 	T dot(const V& v) const {return x*v.x+y*v.y;}
 	T cross(const V& v) const {return x*v.y-v.x*y;}
 	T norm2() const {return x*x + y*y;}
-	double norm() const {return sqrt(norm2());}
+	ld norm() const {return sqrt(norm2());}
 	V normalize() const {return *this/norm();}
 	V rotate90() const {return V(y, -x);}
 };
