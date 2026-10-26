@@ -1,3 +1,5 @@
+// operator<を偏角ソートに使用する例1 https://atcoder.jp/contests/abc481/submissions/80386764
+// 2 https://atcoder.jp/contests/abc442/submissions/80386591
 #include "header.hpp"
 
 template <typename T>
@@ -21,13 +23,18 @@ struct V{
 	ld norm() const {return sqrt(norm2());}
 	V normalize() const {return *this/norm();}
 	V rotate90() const {return V(y, -x);}
+	bool operator<(const V& v)const {
+		bool fa=(y<0 || (y==0 && x<0));
+		bool fb=(v.y<0 || (v.y==0 && v.x<0));
+		if(fa^fb)return fb;
+		return cross(v)>0;
+	}
 };
 template <typename T>
 istream& operator>>(istream& is,V<T>& v) {
-  is>>v.x>>v.y; return is;
+	is>>v.x>>v.y; return is;
 }
 template <typename T>
 ostream& operator<<(ostream& os,const V<T>& v) {
-  os<<v.x<<' '<<v.y; return os;
+	os<<v.x<<' '<<v.y; return os;
 }
-
