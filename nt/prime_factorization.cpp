@@ -5,11 +5,10 @@ vector<pair<ll,ll>> prime_factorization(ll x){
     vector<pair<ll,ll>> res;
     for(ll i=2;i<=sqrt(x);i++){
         if(x%i==0){
-            res.emplace_back(i,1LL);
+            res.emplace_back(i,1);
             x/=i;
         }
-        while (x%i==0)
-        {
+        while(x%i==0){
             res.back().second++;
             x/=i;
         }
