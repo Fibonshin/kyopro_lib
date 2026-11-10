@@ -3,10 +3,11 @@
 // https://judge.yosupo.jp/submission/407612
 // https://yukicoder.me/submissions/1191338
 
-struct hld{
+struct HLD{
 	int n;
 	vector<int> vertex,id,head,par,dep;
-	hld(vector<vector<int>> g){
+	HLD(){}
+	HLD(vector<vector<int>> g){
 		n=g.size();
 		id.resize(n);
 		head.resize(n);
