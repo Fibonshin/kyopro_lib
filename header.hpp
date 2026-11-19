@@ -3,10 +3,17 @@
 #include <acl_bits.hpp>
 #else
 #include <bits/stdc++.h>
+#if __has_include(<atcoder/all>)
 #include <atcoder/all>
 #endif
-using namespace atcoder;
+#endif
 using namespace std;
+#if __has_include(<atcoder/all>)
+using namespace atcoder;
+using mint = modint998244353;
+inline ostream&operator<<(ostream&os,const mint& x){os<<x.val();return os;};
+inline istream&operator>>(istream&is,mint& x){int a;is>>a;x=a;return is;};
+#endif
 using ll=long long;
 using ld=long double;
 using P = pair<ll,ll>;
@@ -17,9 +24,7 @@ template<typename t,typename u>inline bool chmax(t&a,u b){return a<b?a=b,1:0;}
 template<typename t,typename u>inline bool chmin(t&a,u b){return a>b?a=b,1:0;}
 inline int yn(bool b){cout<<(b?"Yes\n":"No\n");return 0;}
 const vector<int> di={1,0,-1,0},dj={0,1,0,-1};
-using mint = modint998244353;
-inline ostream&operator<<(ostream&os,const mint& x){os<<x.val();return os;};
-inline istream&operator>>(istream&is,mint& x){int a;is>>a;x=a;return is;};
 template <typename t>ostream&operator<<(ostream&os,const vector<t>&x){for(t i:x)os<<i<<' ';return os;}
 template <typename t>ostream&operator<<(ostream&os,const vector<vector<t>>&x){for(const vector<t>&i:x)os<<i<<'\n';return os;}
 const ll inf=2e18;
+
